@@ -32,6 +32,19 @@ def clearAll(board, sym):
             x += 1
 
 #PARTE 4 - LIMITANDO O SWAP
+
+def canSwap(board, r1, c1, r2, c2):
+    swap(board, r1, c1, r2, c2)
+    if vLineAt(board, r1, c1, r2, c2):
+        swap(board, r1, c1, r2, c2)
+        return True
+    elif hLineAt(board, r1, c1, r2, c2):
+        swap(board, r1, c1, r2, c2)
+        return True
+    else:
+        swap(board, r1, c1, r2, c2)
+        return False
+
 def vLineAt(board, r1, c1, r2, c2):
 
     # Primeira peça
